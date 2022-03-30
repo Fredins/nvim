@@ -15,11 +15,21 @@ vim.opt.backup         = false
 vim.opt.clipboard:append('unnamedplus')
 vim.opt.scrolloff      = 10
 vim.opt.completeopt    = 'menu,menuone,noselect'
---vim.opt.tex_flavor    = 'latex'
+vim.opt.termguicolors  = true
+
+--  colorscheme
+vim.g.everforest_background             = 'hard'
+vim.g.everforest_enable_italic          = true
+vim.g.everforest_better_performance     = true
+vim.g.everforest_sign_column_background = true
+vim.opt.background                      = 'dark'
+vim.cmd('colorscheme everforest')
+
 vim.cmd('filetype indent off')
 vim.cmd('filetype plugin off')
 vim.cmd('syntax on')
 
+vim.g.mapleader = " "
 vim.g.tex_flavor = "latex"
 vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`
 vim.g.haskell_enable_recursivedo      = 1  -- to enable highlighting of `mdo` and `rec`

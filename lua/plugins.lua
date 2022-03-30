@@ -17,9 +17,7 @@ return require('packer').startup({
     use 'saadparwaiz1/cmp_luasnip'
     use 'ray-x/cmp-treesitter'
     use 'onsails/lspkind-nvim'
-
-    use 'junegunn/seoul256.vim'
-    use 'shaunsingh/solarized.nvim'
+    use 'sainnhe/everforest'
     use 'shaunsingh/nord.nvim'
     use {
        'nvim-treesitter/nvim-treesitter',
@@ -27,7 +25,6 @@ return require('packer').startup({
     }
     use 'neovimhaskell/haskell-vim'
     use 'p00f/godbolt.nvim'
-    -- use 'norcalli/nvim-colorizer.lua'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',
          module = 'tailwindcss-colors',
@@ -40,7 +37,6 @@ return require('packer').startup({
     },
     display = {
       open_fn = function()
-      --  require('tailwindcss-colors').setup()
         return require('packer.util').float({ border = 'single' })
       end
     }

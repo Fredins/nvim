@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/fm/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/fm/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["godbolt.nvim"] = {
     loaded = true,
     path = "/home/fm/.local/share/nvim/site/pack/packer/start/godbolt.nvim",
@@ -153,16 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fm/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["seoul256.vim"] = {
-    loaded = true,
-    path = "/home/fm/.local/share/nvim/site/pack/packer/start/seoul256.vim",
-    url = "https://github.com/junegunn/seoul256.vim"
-  },
-  ["solarized.nvim"] = {
-    loaded = true,
-    path = "/home/fm/.local/share/nvim/site/pack/packer/start/solarized.nvim",
-    url = "https://github.com/shaunsingh/solarized.nvim"
   },
   ["tailwindcss-colors.nvim"] = {
     config = { "\27LJ\1\2<\0\0\2\0\3\0\0054\0\0\0%\1\1\0>\0\2\0027\0\2\0@\0\1\0\nsetup\23tailwindcss-colors\frequire\0" },
