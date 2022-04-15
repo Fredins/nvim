@@ -22,7 +22,7 @@ vim.g.everforest_background             = 'soft'
 vim.g.everforest_enable_italic          = true
 vim.g.everforest_better_performance     = true
 vim.g.everforest_sign_column_background = true
-vim.opt.background                      = 'light'
+vim.opt.background                      = 'dark'
 vim.cmd('colorscheme everforest')
 
 vim.cmd('filetype indent off')
