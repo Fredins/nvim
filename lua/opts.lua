@@ -18,7 +18,7 @@ vim.opt.completeopt    = 'menu,menuone,noselect'
 vim.opt.termguicolors  = true
 
 --  colorscheme
-vim.g.everforest_background             = 'soft'
+vim.g.everforest_background             = 'hard'
 vim.g.everforest_enable_italic          = true
 vim.g.everforest_better_performance     = true
 vim.g.everforest_sign_column_background = true
