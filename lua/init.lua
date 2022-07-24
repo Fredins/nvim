@@ -4,6 +4,3 @@ require('plugins')
 require('setups')
 require('binds')
 
-
-
-

@@ -17,20 +17,29 @@ return require('packer').startup({
     use 'saadparwaiz1/cmp_luasnip'
     use 'ray-x/cmp-treesitter'
     use 'onsails/lspkind-nvim'
-    use 'sainnhe/everforest'
-    use 'shaunsingh/nord.nvim'
     use {
        'nvim-treesitter/nvim-treesitter',
        run = ':TSUpdate'
     }
-    use 'neovimhaskell/haskell-vim'
+    use 'khardix/vim-literate'          
     use 'p00f/godbolt.nvim'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',
          module = 'tailwindcss-colors',
          config = function() return require('tailwindcss-colors').setup() end,
     }
-  end,
+
+-- themes
+    use 'ishan9299/nvim-solarized-lua'
+    use 'shaunsingh/nord.nvim'
+    use 'sainnhe/everforest'
+
+-- haskell
+    use 'neovimhaskell/haskell-vim'
+    use 'enomsg/vim-haskellConcealPlus'
+    
+    end,
+
   config = {
     profile = {
       enable = true

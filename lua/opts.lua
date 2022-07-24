@@ -16,6 +16,22 @@ vim.opt.clipboard:append('unnamedplus')
 vim.opt.scrolloff      = 10
 vim.opt.completeopt    = 'menu,menuone,noselect'
 vim.opt.termguicolors  = true
+vim.opt.conceallevel   = 2
+vim.opt.concealcursor  = 'nvic'
+
+-- haskell
+vim.g.mapleader = " "
+vim.g.tex_flavor = "latex"
+vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`
+vim.g.haskell_enable_recursivedo      = 1  -- to enable highlighting of `mdo` and `rec`
+vim.g.haskell_enable_arrowsyntax      = 1  -- to enable highlighting of `proc`
+vim.g.haskell_enable_pattern_synonyms = 1  -- to enable highlighting of `pattern`
+vim.g.haskell_enable_typeroles        = 1  -- to enable highlighting of type roles
+vim.g.haskell_enable_static_pointers  = 1  -- to enable highlighting of `static`
+vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack keywords
+
+vim.g.hscoptions = 'b↱l'
+
 
 --  colorscheme
 vim.g.everforest_background             = 'hard'
@@ -29,13 +45,4 @@ vim.cmd('filetype indent off')
 vim.cmd('filetype plugin off')
 vim.cmd('syntax on')
 
-vim.g.mapleader = " "
-vim.g.tex_flavor = "latex"
-vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`
-vim.g.haskell_enable_recursivedo      = 1  -- to enable highlighting of `mdo` and `rec`
-vim.g.haskell_enable_arrowsyntax      = 1  -- to enable highlighting of `proc`
-vim.g.haskell_enable_pattern_synonyms = 1  -- to enable highlighting of `pattern`
-vim.g.haskell_enable_typeroles        = 1  -- to enable highlighting of type roles
-vim.g.haskell_enable_static_pointers  = 1  -- to enable highlighting of `static`
-vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack keywords
 
