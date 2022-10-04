@@ -2,11 +2,10 @@
 return require('packer').startup({
   function(use)
     use 'wbthomason/packer.nvim'
-    use 'jdhao/better-escape.vim'
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
+
+
+
+-- LSP and completion
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -17,27 +16,33 @@ return require('packer').startup({
     use 'saadparwaiz1/cmp_luasnip'
     use 'ray-x/cmp-treesitter'
     use 'onsails/lspkind-nvim'
+
+-- other
+    use 'khardix/vim-literate'          
+    use 'p00f/godbolt.nvim'
+    use 'preservim/tagbar'
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
     use {
        'nvim-treesitter/nvim-treesitter',
        run = ':TSUpdate'
     }
-    use 'khardix/vim-literate'          
-    use 'p00f/godbolt.nvim'
+    use 'psliwka/vim-smoothie'
+
+-- themes
+    use 'NLKNguyen/papercolor-theme'
+
+-- Language specific
+    use 'simrat39/rust-tools.nvim'
+    use 'neovimhaskell/haskell-vim'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',
          module = 'tailwindcss-colors',
          config = function() return require('tailwindcss-colors').setup() end,
     }
 
--- themes
-    use 'ishan9299/nvim-solarized-lua'
-    use 'shaunsingh/nord.nvim'
-    use 'sainnhe/everforest'
-
--- haskell
-    use 'neovimhaskell/haskell-vim'
-    use 'enomsg/vim-haskellConcealPlus'
-    
     end,
 
   config = {
