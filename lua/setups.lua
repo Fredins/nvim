@@ -106,7 +106,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- general (no settings)
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, lsp in ipairs({'gopls', 'erlangls', 'elmls', 'jdtls', 'sumneko_lua', 'rust_analyzer'}) do
   nvim_lsp[lsp].setup {
     autostart = false;
