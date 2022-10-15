@@ -30,19 +30,25 @@ vim.g.haskell_enable_pattern_synonyms = 1  -- to enable highlighting of `pattern
 vim.g.haskell_enable_typeroles        = 1  -- to enable highlighting of type roles
 vim.g.haskell_enable_static_pointers  = 1  -- to enable highlighting of `static`
 vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack keywords
-vim.g.haskell_classic_highlighting = 0
-
-
---  everforest
-vim.g.everforest_background             = 'hard'
-vim.g.everforest_enable_italic          = true
-vim.g.everforest_better_performance     = true
-vim.g.everforest_sign_column_background = true
+vim.g.haskell_classic_highlighting    = 0
 
 -- colorscheme 
-vim.opt.background = 'light'
-vim.cmd('colorscheme PaperColor')
+local theme = 'light'
 
+if theme == 'light' then 
+  vim.g.PaperColor_Theme_Options = { 
+    theme = {
+      default = {
+        transparent_background = 0,
+        override = {
+          color07 = {'#111111', '0'},
+        }
+      }
+    }
+  } 
+end
+vim.opt.background = theme
+vim.cmd('colorscheme PaperColor')
 
 vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')

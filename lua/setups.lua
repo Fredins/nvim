@@ -159,7 +159,7 @@ nvim_lsp['hls'].setup{
   -- root_dir = nvim_lsp.util.root_pattern("*default.nix"),
   settings = {
       haskell = {
-          formattingProvider = "brittany"
+          formattingProvider = "stylish-haskell"
       }
   },
   single_file_support = true,

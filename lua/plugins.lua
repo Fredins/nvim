@@ -37,6 +37,8 @@ return require('packer').startup({
 -- Language specific
     use 'simrat39/rust-tools.nvim'
     use 'neovimhaskell/haskell-vim'
+    use 'alx741/vim-stylishask'
+    use 'LnL7/vim-nix'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',
          module = 'tailwindcss-colors',
