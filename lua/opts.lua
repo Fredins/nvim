@@ -34,15 +34,35 @@ vim.g.haskell_classic_highlighting    = 0
 
 -- colorscheme 
 local theme = 'light'
+local yellowBackground = true
+
+local colors = yellowBackground 
+  and
+  {
+    color07                = {'#111111', '0'},
+    color00                = {'#fdf6e3', ''},
+    cursor_fg              = {'#fdf6e3', ''},
+    cursorlinenr_bg        = {'#fdf6e3', ''},
+    linenumber_bg          = {'#fdf6e3', ''},
+    vertsplit_bg           = {'#fdf6e3', ''},
+    todo_bg                = {'#fdf6e3', ''},
+    visual_fg              = {'#fdf6e3', ''},
+    visual_fg              = {'#fdf6e3', ''},
+    tabline_inactive_fg    = {'#fdf6e3', ''},
+    buftabline_active_fg   = {'#fdf6e3', ''},
+    buftabline_inactive_fg = {'#fdf6e3', ''},
+  }
+  or 
+  {
+    color07 = {'#111111', '0'},
+  }
 
 if theme == 'light' then 
   vim.g.PaperColor_Theme_Options = { 
     theme = {
       default = {
         transparent_background = 0,
-        override = {
-          color07 = {'#111111', '0'},
-        }
+        override = colors
       }
     }
   } 
