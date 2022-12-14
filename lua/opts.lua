@@ -33,29 +33,29 @@ vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack
 vim.g.haskell_classic_highlighting    = 0
 
 -- colorscheme 
-local theme = 'light'
-local yellowBackground = true
+Colors = {
+  GREY   = "#eeeeee",
+  YELLOW = "#fdf6e3",
+  WHITE  = "#ffffff",
+}
 
-local colors = yellowBackground 
-  and
-  {
+local theme = 'light'
+local backgroundColor = Colors.WHITE
+
+local colors = {
     color07                = {'#111111', '0'},
-    color00                = {'#fdf6e3', ''},
-    cursor_fg              = {'#fdf6e3', ''},
-    cursorlinenr_bg        = {'#fdf6e3', ''},
-    linenumber_bg          = {'#fdf6e3', ''},
-    vertsplit_bg           = {'#fdf6e3', ''},
-    todo_bg                = {'#fdf6e3', ''},
-    visual_fg              = {'#fdf6e3', ''},
-    visual_fg              = {'#fdf6e3', ''},
-    tabline_inactive_fg    = {'#fdf6e3', ''},
-    buftabline_active_fg   = {'#fdf6e3', ''},
-    buftabline_inactive_fg = {'#fdf6e3', ''},
-  }
-  or 
-  {
-    color07 = {'#111111', '0'},
-  }
+    color00                = {backgroundColor, ''},
+    cursor_fg              = {backgroundColor, ''},
+    cursorlinenr_bg        = {backgroundColor, ''},
+    linenumber_bg          = {backgroundColor, ''},
+    vertsplit_bg           = {backgroundColor, ''},
+    todo_bg                = {backgroundColor, ''},
+    visual_fg              = {backgroundColor, ''},
+    visual_fg              = {backgroundColor, ''},
+    tabline_inactive_fg    = {backgroundColor, ''},
+    buftabline_active_fg   = {backgroundColor, ''},
+    buftabline_inactive_fg = {backgroundColor, ''},
+}
 
 if theme == 'light' then 
   vim.g.PaperColor_Theme_Options = { 
