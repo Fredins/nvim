@@ -264,3 +264,6 @@ require("godbolt").setup({
     }
 })
 --]]
+--
+
+require('Comment').setup()

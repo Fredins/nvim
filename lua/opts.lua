@@ -19,10 +19,11 @@ vim.opt.conceallevel   = 2
 vim.opt.concealcursor  = 'nvic'
 vim.opt.termguicolors  = true
 
--- haskell
 vim.g.mapleader = " "
+vim.g.maplocalleader = "ö"
 vim.g.tex_flavor = "latex"
 
+-- haskell
 vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`
 vim.g.haskell_enable_recursivedo      = 1  -- to enable highlighting of `mdo` and `rec`
 vim.g.haskell_enable_arrowsyntax      = 1  -- to enable highlighting of `proc`
@@ -31,6 +32,7 @@ vim.g.haskell_enable_typeroles        = 1  -- to enable highlighting of type rol
 vim.g.haskell_enable_static_pointers  = 1  -- to enable highlighting of `static`
 vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack keywords
 vim.g.haskell_classic_highlighting    = 0
+
 
 -- colorscheme 
 Colors = {
@@ -72,3 +74,22 @@ vim.cmd('colorscheme PaperColor')
 
 vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
+
+
+
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>Telescope find_files<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope live_grep<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>c', "<cmd>TagbarToggle<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>lua require'telescope.builtin'.buffers{}<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>k', "<cmd>lua require'telescope.builtin'.keymaps{}<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>g', "<cmd>lua require'telescope.builtin'.git_branches{}<cr>", { noremap = true })
+
+
+-- diagraph
+vim.api.nvim_set_keymap('i', '<C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('insert')<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', 'r<C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('normal')<CR>", { noremap = true })
+vim.api.nvim_set_keymap('v', '<ESC><C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('visual')<CR>", { noremap = true })
+
+-- agda
+-- package.cpath = "/nix/store/cxn7v2ljwal7qw43r5y359jmyhz5f4w8-lua5.1-luautf8-0.1.4-1/lib/lua/5.1/lua-utf8.os" .. package.cpath

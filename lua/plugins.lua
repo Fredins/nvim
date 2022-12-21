@@ -3,8 +3,6 @@ return require('packer').startup({
   function(use)
     use 'wbthomason/packer.nvim'
 
-
-
 -- LSP and completion
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -30,14 +28,16 @@ return require('packer').startup({
        run = ':TSUpdate'
     }
     use 'psliwka/vim-smoothie'
-
--- themes
     use 'NLKNguyen/papercolor-theme'
+    use 'protex/better-digraphs.nvim'
+    use 'numToStr/Comment.nvim'
+
 
 -- Language specific
-    use 'simrat39/rust-tools.nvim'
+--    use 'simrat39/rust-tools.nvim'
     use 'neovimhaskell/haskell-vim'
     use 'alx741/vim-stylishask'
+    use 'ashinkarov/nvim-agda'
     use 'LnL7/vim-nix'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',
