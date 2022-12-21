@@ -42,7 +42,7 @@ Colors = {
 }
 
 local theme = 'light'
-local backgroundColor = Colors.WHITE
+local backgroundColor = Colors.GREY
 
 local colors = {
     color07                = {'#111111', '0'},
