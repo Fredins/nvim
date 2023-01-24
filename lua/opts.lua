@@ -22,6 +22,8 @@ vim.opt.termguicolors  = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "ö"
 vim.g.tex_flavor = "latex"
+vim.g.vimtex_view_general_vewer = 'okular'
+
 
 -- haskell
 vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`

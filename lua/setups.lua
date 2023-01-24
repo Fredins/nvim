@@ -173,6 +173,7 @@ nvim_lsp['hls'].setup{
 
 -- latex
 nvim_lsp['texlab'].setup{
+    autostart = false,
     cmd = { "texlab" },
     filetypes = { "tex", "bib" },
     --root_dir = function(fname)
