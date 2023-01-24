@@ -31,10 +31,10 @@ return require('packer').startup({
     use 'NLKNguyen/papercolor-theme'
     use 'protex/better-digraphs.nvim'
     use 'numToStr/Comment.nvim'
+    use 'lervag/vimtex'
 
 
 -- Language specific
---    use 'simrat39/rust-tools.nvim'
     use 'neovimhaskell/haskell-vim'
     use 'alx741/vim-stylishask'
     use 'ashinkarov/nvim-agda'

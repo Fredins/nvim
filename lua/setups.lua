@@ -183,7 +183,7 @@ nvim_lsp['texlab'].setup{
         auxDirectory = ".",
         bibtexFormatter = "texlab",
         build = {
-          args = { "-pdfxe", "-interaction=nonstopmode", "-synctex=1", "%f" },
+          args = { "-pdf", "%f" },
           executable = "latexmk",
           forwardSearchAfter = false,
           onSave = true
