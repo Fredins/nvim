@@ -95,6 +95,10 @@ vim.api.nvim_set_keymap('n', '<leader>pd', "<cmd>lua require'nabla'.disable_virt
 vim.api.nvim_set_keymap('i', '<C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('insert')<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', 'r<C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('normal')<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<ESC><C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('visual')<CR>", { noremap = true })
+vim.cmd([[
+  dig v= 8659
+  dig l- 8866
+]]) 
 
 vim.cmd([[
   execute "digraphs as " . 0x2090
@@ -165,3 +169,4 @@ vim.cmd([[
 
 -- agda
 -- package.cpath = "/nix/store/cxn7v2ljwal7qw43r5y359jmyhz5f4w8-lua5.1-luautf8-0.1.4-1/lib/lua/5.1/lua-utf8.os" .. package.cpath
+--
