@@ -15,7 +15,7 @@ vim.opt.backup         = false
 vim.opt.clipboard:append('unnamedplus')
 vim.opt.scrolloff      = 10
 vim.opt.completeopt    = 'menu,menuone,noselect'
-vim.opt.conceallevel   = 2
+vim.opt.conceallevel   = 0
 vim.opt.concealcursor  = 'nvic'
 vim.opt.termguicolors  = true
 
