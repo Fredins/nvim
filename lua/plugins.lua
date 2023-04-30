@@ -16,9 +16,9 @@ return require('packer').startup({
     use 'onsails/lspkind-nvim'
 
 -- other
-    use 'khardix/vim-literate'          
-    use 'p00f/godbolt.nvim'
-    use 'preservim/tagbar'
+    -- use 'khardix/vim-literate'          
+    -- use 'p00f/godbolt.nvim'
+    -- use 'preservim/tagbar'
     use {
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
@@ -37,7 +37,7 @@ return require('packer').startup({
 -- Language specific
     use 'neovimhaskell/haskell-vim'
     use 'alx741/vim-stylishask'
-    use 'ashinkarov/nvim-agda'
+    use 'isovector/cornelis'
     use 'LnL7/vim-nix'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',

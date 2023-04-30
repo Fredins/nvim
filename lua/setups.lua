@@ -107,7 +107,7 @@ end
 
 -- general (no settings)
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-for _, lsp in ipairs({'gopls', 'erlangls', 'elmls', 'jdtls', 'sumneko_lua', 'rust_analyzer'}) do
+for _, lsp in ipairs({--[[ 'gopls', 'erlangls', 'elmls', 'jdtls', 'lua_ls', 'rust_analyzer' ]]}) do
   nvim_lsp[lsp].setup {
     autostart = false;
     capabilities = capabilities,

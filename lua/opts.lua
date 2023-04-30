@@ -1,9 +1,9 @@
 vim.opt.number 	       = true
 vim.opt.relativenumber = true
 vim.opt.incsearch      = true
-vim.opt.tabstop        = 2
-vim.opt.softtabstop    = 2
-vim.opt.shiftwidth     = 2
+vim.opt.tabstop        = 4
+vim.opt.softtabstop    = 4
+vim.opt.shiftwidth     = 4
 vim.opt.expandtab      = true
 vim.opt.smartindent    = false
 vim.opt.cindent        = false
@@ -26,14 +26,15 @@ vim.g.vimtex_view_general_vewer = 'okular'
 
 
 -- haskell
-vim.g.haskell_enable_quantification   = 1  -- to enable highlighting of `forall`
-vim.g.haskell_enable_recursivedo      = 1  -- to enable highlighting of `mdo` and `rec`
-vim.g.haskell_enable_arrowsyntax      = 1  -- to enable highlighting of `proc`
+vim.g.haskell_enable_quantification   = 0  -- to enable highlighting of `forall`
+vim.g.haskell_enable_recursivedo      = 0  -- to enable highlighting of `mdo` and `rec`
+vim.g.haskell_enable_arrowsyntax      = 0  -- to enable highlighting of `proc`
 vim.g.haskell_enable_pattern_synonyms = 1  -- to enable highlighting of `pattern`
-vim.g.haskell_enable_typeroles        = 1  -- to enable highlighting of type roles
-vim.g.haskell_enable_static_pointers  = 1  -- to enable highlighting of `static`
-vim.g.haskell_backpack                = 1  -- to enable highlighting of backpack keywords
+vim.g.haskell_enable_typeroles        = 0  -- to enable highlighting of type roles
+vim.g.haskell_enable_static_pointers  = 0  -- to enable highlighting of `static`
+vim.g.haskell_backpack                = 0  -- to enable highlighting of backpack keywords
 vim.g.haskell_classic_highlighting    = 0
+vim.g.haskell_ident_disable           = 1
 
 
 -- colorscheme 
@@ -66,7 +67,8 @@ if theme == 'light' then
     theme = {
       default = {
         transparent_background = 0,
-        override = colors
+        override = colors,
+        allow_bold = 0
       }
     }
   } 
@@ -98,9 +100,13 @@ vim.api.nvim_set_keymap('i', '<C-k><C-k>', "<Cmd>lua require'better-digraphs'.di
 vim.api.nvim_set_keymap('n', 'r<C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('normal')<CR>", { noremap = true })
 vim.api.nvim_set_keymap('v', '<ESC><C-k><C-k>', "<Cmd>lua require'better-digraphs'.digraphs('visual')<CR>", { noremap = true })
 vim.cmd([[
-  dig v= 8659
+  dig v= 8659 
   dig l- 8866
+  dig -l 8867
+  dig >S 8407
 ]]) 
+
+
 
 vim.cmd([[
   execute "digraphs as " . 0x2090
@@ -166,6 +172,11 @@ vim.cmd([[
   execute "digraphs US " . 0x1D41
   execute "digraphs VS " . 0x2C7D
   execute "digraphs WS " . 0x1D42
+  
+  execute "digraphs /( " . 0x2209
+  execute "digraphs ba " . 0x0305
+  
+
 ]])
 
 
