@@ -8,11 +8,10 @@ See lua/plugins.lua for list of plugins.
 Mostly focused on LSP support and completions.
 
 Here is the language that are configured so far:
- - haskell 
- - erlang
- - elm
- - go
- - typescript/javascript
+ - haskell
+ - agda
+ - typescript with tailwind colors
  - latex
+ 
 
 
