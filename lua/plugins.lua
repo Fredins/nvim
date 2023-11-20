@@ -28,16 +28,19 @@ return require('packer').startup({
        run = ':TSUpdate'
     }
     use 'psliwka/vim-smoothie'
-    use 'NLKNguyen/papercolor-theme'
+    use 'fredins/papercolor-theme'
+  -- use 'NLKNguyen/papercolor-theme'
     use 'protex/better-digraphs.nvim'
     use 'numToStr/Comment.nvim'
-    use 'lervag/vimtex'
+    -- use 'lervag/vimtex'
 
 
 -- Language specific
     use 'neovimhaskell/haskell-vim'
     use 'alx741/vim-stylishask'
     use 'isovector/cornelis'
+    use 'kana/vim-textobj-user'
+    use 'neovimhaskell/nvim-hs.vim'
     use 'LnL7/vim-nix'
     use{
         'themaxmarchuk/tailwindcss-colors.nvim',

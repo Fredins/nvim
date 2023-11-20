@@ -1,9 +1,9 @@
 vim.opt.number 	       = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.incsearch      = true
-vim.opt.tabstop        = 4
-vim.opt.softtabstop    = 4
-vim.opt.shiftwidth     = 4
+vim.opt.tabstop        = 2
+vim.opt.softtabstop    = 2
+vim.opt.shiftwidth     = 2
 vim.opt.expandtab      = true
 vim.opt.smartindent    = false
 vim.opt.cindent        = false
@@ -19,6 +19,7 @@ vim.opt.conceallevel   = 0
 vim.opt.concealcursor  = 'nvic'
 vim.opt.termguicolors  = true
 
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "ö"
 vim.g.tex_flavor = "latex"
@@ -29,12 +30,40 @@ vim.g.vimtex_view_general_vewer = 'okular'
 vim.g.haskell_enable_quantification   = 0  -- to enable highlighting of `forall`
 vim.g.haskell_enable_recursivedo      = 0  -- to enable highlighting of `mdo` and `rec`
 vim.g.haskell_enable_arrowsyntax      = 0  -- to enable highlighting of `proc`
-vim.g.haskell_enable_pattern_synonyms = 1  -- to enable highlighting of `pattern`
+vim.g.haskell_enable_pattern_synonyms = 0  -- to enable highlighting of `pattern`
 vim.g.haskell_enable_typeroles        = 0  -- to enable highlighting of type roles
 vim.g.haskell_enable_static_pointers  = 0  -- to enable highlighting of `static`
 vim.g.haskell_backpack                = 0  -- to enable highlighting of backpack keywords
 vim.g.haskell_classic_highlighting    = 0
 vim.g.haskell_ident_disable           = 1
+
+vim.g.stylishask_on_save = 0
+
+-- Cornelis
+vim.g.cornelis_use_global_binary = 1
+
+
+vim.cmd([[
+au BufRead,BufNewFile *.agda call AgdaFiletype()
+function! AgdaFiletype()
+    nnoremap <buffer> <leader>l :CornelisLoad<CR>
+    nnoremap <buffer> <leader>r :CornelisRefine<CR>
+    nnoremap <buffer> <leader>m :CornelisMakeCase<CR>
+    nnoremap <buffer> <leader>, :CornelisTypeContext<CR>
+    nnoremap <buffer> <leader>. :CornelisTypeContextInfer<CR>
+    nnoremap <buffer> <leader>n :CornelisSolve<CR>
+    nnoremap <buffer> <leader>a :CornelisAuto<CR>
+    nnoremap <buffer> gd        :CornelisGoToDefinition<CR>
+    nnoremap <buffer> <leader>k :CornelisPrevGoal<CR>
+    nnoremap <buffer> <leader>j :CornelisNextGoal<CR>
+    nnoremap <buffer> <C-A>     :CornelisInc<CR>
+    nnoremap <buffer> <C-X>     :CornelisDec<CR>
+    nnoremap <buffer> <leader>n :CornelisNormalize<CR>
+endfunction
+
+au BufWritePost *.agda execute "normal! :CornelisLoad\<CR>"
+]])
+
 
 
 -- colorscheme 
@@ -45,7 +74,7 @@ Colors = {
 }
 
 local theme = 'light'
-local backgroundColor = Colors.GREY
+local backgroundColor = Colors.WHITE
 
 local colors = {
     color07                = {'#111111', '0'},
@@ -68,7 +97,12 @@ if theme == 'light' then
       default = {
         transparent_background = 0,
         override = colors,
-        allow_bold = 0
+        allow_bold = 1
+      }
+    },
+    language = {
+      haskell = {
+        no_bold_types = 1
       }
     }
   } 
@@ -82,11 +116,11 @@ vim.cmd('filetype plugin indent on')
 
 
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>Telescope find_files<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope live_grep<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope live_grep<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>c', "<cmd>TagbarToggle<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>lua require'telescope.builtin'.buffers{}<cr>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>k', "<cmd>lua require'telescope.builtin'.keymaps{}<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>i', "<cmd>lua require'telescope.builtin'.keymaps{}<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>g', "<cmd>lua require'telescope.builtin'.git_branches{}<cr>", { noremap = true })
 
 
@@ -104,6 +138,8 @@ vim.cmd([[
   dig l- 8866
   dig -l 8867
   dig >S 8407
+  dig l> 8614
+  dig r~ 10239
 ]]) 
 
 

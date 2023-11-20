@@ -171,6 +171,25 @@ nvim_lsp['hls'].setup{
 }
 
 
+-- Spell checking
+nvim_lsp['ltex'].setup{
+  autostart = false;
+  settings = {
+    ltex = {
+			language = "en-US",
+		},
+  },
+  single_file_support = true,
+  capabilities = capabilities,
+  filetypes = { "agda", "bib", "gitcommit", "markdown", "org", "plaintex", "rst", "rnoweb", "tex", "pandoc", "quarto", "rmd" },
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
+
+
+
 -- latex
 nvim_lsp['texlab'].setup{
     autostart = false,
@@ -185,7 +204,7 @@ nvim_lsp['texlab'].setup{
         bibtexFormatter = "texlab",
         build = {
           args = { "-pdf", "%f" },
-          executable = "latexmk",
+          executable = "lualatex",
           forwardSearchAfter = false,
           onSave = true
         },
