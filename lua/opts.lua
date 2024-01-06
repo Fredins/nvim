@@ -19,7 +19,6 @@ vim.opt.conceallevel   = 0
 vim.opt.concealcursor  = 'nvic'
 vim.opt.termguicolors  = true
 
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = "ö"
 vim.g.tex_flavor = "latex"
@@ -43,6 +42,7 @@ vim.g.stylishask_on_save = 0
 vim.g.cornelis_use_global_binary = 1
 
 
+
 vim.cmd([[
 au BufRead,BufNewFile *.agda call AgdaFiletype()
 function! AgdaFiletype()
@@ -62,6 +62,7 @@ function! AgdaFiletype()
 endfunction
 
 au BufWritePost *.agda execute "normal! :CornelisLoad\<CR>"
+inoremap <localleader> <C-O>:call cornelis#prompt_input()<CR>
 ]])
 
 
@@ -116,12 +117,12 @@ vim.cmd('filetype plugin indent on')
 
 
 vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>Telescope find_files<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope live_grep<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>Telescope live_grep<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>c', "<cmd>TagbarToggle<cr>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>b', "<cmd>lua require'telescope.builtin'.buffers{}<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>bu', "<cmd>lua require'telescope.builtin'.buffers{}<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>i', "<cmd>lua require'telescope.builtin'.keymaps{}<cr>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>g', "<cmd>lua require'telescope.builtin'.git_branches{}<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>br', "<cmd>lua require'telescope.builtin'.git_branches{}<cr>", { noremap = true })
 
 
 vim.api.nvim_set_keymap('n', '<leader>p', "<cmd>lua require'nabla'.popup()<cr>", { noremap = true })
@@ -138,7 +139,7 @@ vim.cmd([[
   dig l- 8866
   dig -l 8867
   dig >S 8407
-  dig l> 8614
+  dig r> 8614
   dig r~ 10239
 ]]) 
 
@@ -210,9 +211,8 @@ vim.cmd([[
   execute "digraphs WS " . 0x1D42
   
   execute "digraphs /( " . 0x2209
-  execute "digraphs ba " . 0x0305
-  
-
+  execute "digraphs co " . 0x0305
+  execute "digraphs cl " . 0x0332
 ]])
 
 
