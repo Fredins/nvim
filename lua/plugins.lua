@@ -15,6 +15,12 @@ return require('packer').startup({
     use 'ray-x/cmp-treesitter'
     use 'onsails/lspkind-nvim'
 
+
+    -- use {
+    --     'glacambre/firenvim',
+    --     run = function() vim.fn['firenvim#install'](0) end 
+    -- }
+
 -- other
     -- use 'khardix/vim-literate'          
     -- use 'p00f/godbolt.nvim'
@@ -42,11 +48,12 @@ return require('packer').startup({
     use 'kana/vim-textobj-user'
     use 'neovimhaskell/nvim-hs.vim'
     use 'LnL7/vim-nix'
-    use{
-        'themaxmarchuk/tailwindcss-colors.nvim',
-         module = 'tailwindcss-colors',
-         config = function() return require('tailwindcss-colors').setup() end,
-    }
+    -- use{
+    --     'themaxmarchuk/tailwindcss-colors.nvim',
+    --      module = 'tailwindcss-colors',
+    --      config = function() return require('tailwindcss-colors').setup() end,
+    -- }
+    use 'BeneCollyridam/futhark-vim'
 
     end,
 

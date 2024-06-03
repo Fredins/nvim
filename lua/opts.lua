@@ -20,7 +20,7 @@ vim.opt.concealcursor  = 'nvic'
 vim.opt.termguicolors  = true
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = "ö"
+-- vim.g.maplocalleader = "^S"
 vim.g.tex_flavor = "latex"
 vim.g.vimtex_view_general_vewer = 'okular'
 
@@ -40,6 +40,7 @@ vim.g.stylishask_on_save = 0
 
 -- Cornelis
 vim.g.cornelis_use_global_binary = 1
+vim.g.cornelis_agda_prefix = "<c-l>"
 
 
 
@@ -62,7 +63,6 @@ function! AgdaFiletype()
 endfunction
 
 au BufWritePost *.agda execute "normal! :CornelisLoad\<CR>"
-inoremap <localleader> <C-O>:call cornelis#prompt_input()<CR>
 ]])
 
 
@@ -77,7 +77,7 @@ Colors = {
 local theme = 'light'
 local backgroundColor = Colors.WHITE
 
-local colors = {
+local colors_light = {
     color07                = {'#111111', '0'},
     color00                = {backgroundColor, ''},
     cursor_fg              = {backgroundColor, ''},
@@ -92,12 +92,28 @@ local colors = {
     buftabline_inactive_fg = {backgroundColor, ''},
 }
 
+local colors_dark = {
+    color07                = {'#ffffff', '0'},
+    color00                = {'#000000', ''},
+    cursor_fg              = {'#000000', ''},
+    cursorlinenr_bg        = {'#000000', ''},
+    linenumber_bg          = {'#000000', ''},
+    vertsplit_bg           = {'#000000', ''},
+    todo_bg                = {'#000000', ''},
+    visual_fg              = {'#000000', ''},
+    visual_fg              = {'#000000', ''},
+    tabline_inactive_fg    = {'#000000', ''},
+    buftabline_active_fg   = {'#000000', ''},
+    buftabline_inactive_fg = {'#000000', ''},
+}
+
+
 if theme == 'light' then 
   vim.g.PaperColor_Theme_Options = { 
     theme = {
       default = {
         transparent_background = 0,
-        override = colors,
+        override = colors_light,
         allow_bold = 1
       }
     },
@@ -108,6 +124,25 @@ if theme == 'light' then
     }
   } 
 end
+
+if theme == 'dark' then 
+  vim.g.PaperColor_Theme_Options = { 
+    theme = {
+      default = {
+        transparent_background = 0,
+        override = colors_dark,
+        allow_bold = 1
+      }
+    },
+    language = {
+      haskell = {
+        no_bold_types = 1
+      }
+    }
+  } 
+end
+
+
 vim.opt.background = theme
 vim.cmd('colorscheme PaperColor')
 
